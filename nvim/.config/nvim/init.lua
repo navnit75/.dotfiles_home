@@ -3,7 +3,7 @@ require("config.options")
 require("config.keymaps")
 require("plugins.themes")
 
-vim.cmd.colorscheme("moonfly")
+vim.cmd.colorscheme("github_dark_colorblind")
 vim.opt.termguicolors = true
 vim.opt.formatoptions:remove("c")
 vim.opt.formatoptions:remove("r")

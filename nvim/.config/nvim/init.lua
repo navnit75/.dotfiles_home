@@ -19,7 +19,7 @@ vim.opt.guicursor = {
 }
 
 vim.api.nvim_set_hl(0, "iCursor", { bg = "#ff6b6b", fg = "#ffffff" }) -- Replace mode: red
-vim.api.nvim_set_hl(0, "rCursor", { bg = "#4ecdc4", fg = "#ffffff" }) -- Insert mode: teal
+vim.api.nvim_set_hl(0, "rCursor", { bg = "#ffdd44", fg = "#ffffff" }) -- Insert mode: teal
 
 -- Configuration which character to show and how
 -- vim.opt.list = true

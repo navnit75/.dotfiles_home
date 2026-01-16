@@ -109,11 +109,6 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=$HOME/.toolbox/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Set up mise for runtime management
-eval "$(mise activate zsh)"
-source /Users/knavnav/.brazil_completion/zsh_completion
-alias bb='brazil-build'
-alias ls='lsd'
-alias bb='brazil-build'
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

@@ -3,8 +3,7 @@ require("config.options")
 require("config.keymaps")
 require("plugins.themes")
 
-vim.cmd.colorscheme("github_dark_colorblind")
-vim.opt.termguicolors = true
+-- vim.cmd.colorscheme("everforest")
 vim.opt.formatoptions:remove("c")
 vim.opt.formatoptions:remove("r")
 vim.opt.formatoptions:remove("o")
@@ -19,7 +18,7 @@ vim.opt.guicursor = {
 }
 
 vim.api.nvim_set_hl(0, "iCursor", { bg = "#ff6b6b", fg = "#ffffff" }) -- Replace mode: red
-vim.api.nvim_set_hl(0, "rCursor", { bg = "#ffdd44", fg = "#ffffff" }) -- Insert mode: teal
+vim.api.nvim_set_hl(0, "rCursor", { bg = "#da9b7b", fg = "#ffffff" }) -- Insert mode: teal
 
 -- Configuration which character to show and how
 -- vim.opt.list = true

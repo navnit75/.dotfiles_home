@@ -1,0 +1,35 @@
+cursor-style = block
+shell-integration-features = no-cursor
+font-family = "0xProto Nerd Font"
+# font-style = Bold
+font-size = 12
+font-thicken = true
+ # font-style-bold = Regular
+font-thicken-strength = 50
+
+background = #1E2326
+foreground = #D3C6AA
+
+adjust-cell-height = 6
+adjust-underline-position = 7%
+selection-background = #4C3743
+selection-foreground = #D3C6AA
+
+palette = 0=#7A8478
+palette = 1=#E67E80
+palette = 2=#A7C080
+palette = 3=#DBBC7F
+palette = 4=#7FBBB3
+palette = 5=#D699B6
+palette = 6=#83C092
+palette = 7=#F2EFDF
+palette = 8=#A6B0A0
+palette = 9=#F85552
+palette = 10=#8DA101
+palette = 11=#DFA000
+palette = 12=#3A94C5
+palette = 13=#DF69BA
+palette = 14=#35A77C
+palette = 15=#FFFBEF
+
+bold-is-bright = false

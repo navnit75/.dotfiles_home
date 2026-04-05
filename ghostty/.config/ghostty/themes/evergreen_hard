@@ -1,0 +1,32 @@
+# Evergreen Hard - Ghostty Theme
+
+# background = 1f2326
+# foreground = d1c6aa
+#
+# # Cursor
+# cursor-color = db9b75
+# cursor-text = 493743
+#
+# # Selection
+# selection-background = 493743
+# selection-foreground = d1c6aa
+#
+# # Normal colors
+# palette = 0=#7c8478
+# palette = 1=#d88383
+# palette = 2=#acc087
+# palette = 3=#d6bd87
+# palette = 4=#8cbab3
+# palette = 5=#cd9cb5
+# palette = 6=#90be96
+# palette = 7=#f2efe1
+#
+# # Bright colors
+# palette = 8=#a8b0a1
+# palette = 9=#e66158
+# palette = 10=#91a131
+# palette = 11=#d6a337
+# palette = 12=#53a3c1
+# palette = 13=#d070b6
+# palette = 14=#58a77f
+# palette = 15=#fffbef

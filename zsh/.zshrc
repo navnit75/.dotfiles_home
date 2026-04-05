@@ -4,13 +4,13 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="eastwood"
+# ZSH_THEME="eastwood"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,5 +110,11 @@ export PATH=$HOME/.toolbox/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Set up mise for runtime management
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+export PATH="$HOME/.aim/mcp-servers:$PATH"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/M365Princess_mine.omp.json)"
+
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/M365Princess_mine.omp.json)"
+fi

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "pink": "#f38ba8",
+        "peach": "#fab387",
+        "yellow": "#f9e2af",
+        "green": "#a6e3a1",
+        "blue": "#74c7ec",
+        "purple": "#b4befe",
+        "black": "#000000",
+        "sky": "#89DCEB",
+        "white": "#CDD6F4",
+        "red": "#F38BA8"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "foreground": "p:black",
+          "background": "p:pink",
+          "template": "{{ if .Env.PNPPSHOST }} \uf8c5 {{ .Env.PNPPSHOST }} {{ end }}"
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "foreground": "p:black",
+          "background": "p:blue",
+          "powerline_symbol": "\ue0b0",
+          "template": "{{ if .Env.PNPPSSITE }} \uf2dd {{ .Env.PNPPSSITE }}{{ end }}"
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "p:black",
+          "background": "p:blue",
+          "template": "{{ if .Env.PNPPSSITE }}\u00A0{{ end }}"
+        }
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:pink",
+          "foreground": "p:black",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b0",
+          "style": "diamond",
+          "template": "\uf179 {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "p:peach",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "powerline",
+          "template": " \ue6ad {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "p:yellow",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "\u200a",
+          "type": "text"
+        },
+        {
+          "options": {
+            "branch_template": "{{ trunc 25 .Branch }}",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "foreground": "p:black",
+          "background": "p:yellow",
+          "powerline_symbol": "\ue0b0",
+          "type": "git",
+          "style": "powerline",
+          "template": "{{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} "
+        },
+        {
+          "background": "p:green",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "\u200a",
+          "type": "text"
+        },
+        {
+          "background": "p:green ",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "{{ if .SSHSession }}\uf817 SSH {{ end }}",
+          "type": "session"
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "\u200a",
+          "type": "text"
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:black",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "\ue235 {{ base .Env.VIRTUAL_ENV }} ",
+          "type": "python"
+        },
+        {
+          "background": "p:purple",
+          "foreground": "p:black",
+          "properties": {
+            "time_format": "15:04"
+          },
+          "style": "diamond",
+          "template": " \uf017 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 4
+}

@@ -18,7 +18,8 @@ vim.opt.guicursor = {
 }
 
 vim.api.nvim_set_hl(0, "iCursor", { bg = "#ff6b6b", fg = "#ffffff" }) -- Replace mode: red
-vim.api.nvim_set_hl(0, "rCursor", { bg = "#da9b7b", fg = "#ffffff" }) -- Insert mode: teal
+vim.api.nvim_set_hl(0, "rCursor", { bg = "#ffff00", fg = "#000000" }) -- Insert mode: yellow
+vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
 
 -- Configuration which character to show and how
 -- vim.opt.list = true

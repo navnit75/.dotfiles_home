@@ -44,3 +44,9 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldenable = true
+
+-- Yellow cursor in insert mode
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
+vim.api.nvim_set_hl(0, "Cursor", { fg = "#000000", bg = "#FFFF00" })
+
+vim.o.autoread = true

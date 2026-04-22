@@ -3,10 +3,10 @@
 font-family = "Fira Code"
 font-size = 12
 font-thicken = true
-font-style-bold = Regular
-font-thicken-strength = 11
+font-thicken-strength = 200
+# font-style-bold = Bold
 
-adjust-cell-height = 5
+adjust-cell-height = 25%
 adjust-underline-position = 7%
 theme=moonfly-default
-bold-is-bright = false
+font-style-bold = false

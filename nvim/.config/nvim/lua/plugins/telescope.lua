@@ -12,7 +12,13 @@ return {
 		require("telescope").setup({})
 		local builtin = require("telescope.builtin")
 
-		keymap("<leader><leader>", builtin.find_files)
-		keymap("<leader>fg", builtin.live_grep)
+		-- keymap("<leader><leader>", builtin.find_files)
+		-- keymap("<leader>fg", builtin.live_grep)
+		keymap("<leader><leader>", function()
+			require("fff").find_files()
+		end)
+		keymap("<leader>fg", function()
+			require("fff").live_grep()
+		end)
 	end,
 }

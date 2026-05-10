@@ -8,6 +8,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set({ "n", "x", "o" }, "gl", "$", { desc = "End of line" })
+vim.keymap.set({ "n", "x", "o" }, "gh", "^", { desc = "Start of line" })
+
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

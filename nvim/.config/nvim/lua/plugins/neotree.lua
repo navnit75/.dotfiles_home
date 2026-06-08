@@ -1,4 +1,5 @@
 return {
+
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -75,6 +76,7 @@ return {
 			file_size = { enabled = false },
 			last_modified = { enabled = false },
 			type = { enabled = false },
+			git_status = { enabled = false },
 			indent = {
 				with_markers = false,
 				with_expanders = false,

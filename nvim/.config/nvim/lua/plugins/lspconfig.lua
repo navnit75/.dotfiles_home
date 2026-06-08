@@ -13,7 +13,7 @@ return {
 				},
 			},
 		},
-		{ "Bilal2453/luvit-meta", lazy = true },
+		{ "Bilal2453/luvit-meta", lazy = true }
 	},
 	-- NOTE : Step by step guide to install language server
 	-- First add it to opts
@@ -45,15 +45,14 @@ return {
 					},
 				},
 			}, -- LSP for Python
+			ruff = {}, -- Linter for Python
 			clangd = {
 				-- Optional: Customize clangd
 				cmd = {
 					"clangd",
 					"--background-index",
-					"--clang-tidy",
 					"--header-insertion=iwyu",
-					"--completion-style=detailed",
-					"--function-arg-placeholders",
+					"--completion-style=bundled",
 					"--fallback-style=llvm",
 				},
 				init_options = {
@@ -63,27 +62,62 @@ return {
 				},
 			},
 		},
+		setup = {
+			jdtls = function()
+				return true
+			end,
+		},
 	},
 
 	config = function(_, opts)
-		-- Setup barium (custom LSP for Brazil Config files)
+		vim.lsp.set_log_level("off")
+
 		local lspconfig = require("lspconfig")
+		local configs = require("lspconfig.configs")
+
+		vim.filetype.add({
+			filename = {
+				["Config"] = function()
+					vim.b.brazil_package_Config = 1
+					return "brazil-config"
+				end,
+			},
+		})
+
+		configs.barium = {
+			default_config = {
+				cmd = { "barium" },
+				filetypes = { "brazil-config" },
+				root_dir = function(fname)
+					return lspconfig.util.find_git_ancestor(fname)
+				end,
+				settings = {},
+			},
+		}
 
 		-- This call has to be made for lsp to understand the opts
 		-- As we are manually calling this
-		lspconfig.ts_ls.setup({})
+		lspconfig.barium.setup({})
+		lspconfig.ts_ls.setup({
+	on_attach = function(client)
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+	end,
+})
 		lspconfig.lua_ls.setup({})
 		lspconfig.pyright.setup({})
+		lspconfig.ruff.setup({})
 		lspconfig.clangd.setup({})
 
 		-- Setup LSP keybindings
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("lsp-attach-keybinds", { clear = true }),
 			callback = function(e)
-				-- local client = vim.lsp.get_client_by_id(e.data.client_id)
-				-- if client then
-				-- 	client.server_capabilities.semanticTokenProvider = nil
-				-- end
+				local client = vim.lsp.get_client_by_id(e.data.client_id)
+				if client then
+					client.server_capabilities.semanticTokensProvider = nil
+					client.server_capabilities.documentHighlightProvider = nil
+				end
 
 				local keymap = function(keys, func)
 					vim.keymap.set("n", keys, func, { buffer = e.buf })

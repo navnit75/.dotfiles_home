@@ -6,18 +6,20 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"ts_ls",
+				"jdtls",
 				"pyright",
-				"clangd",
+				"ruff",
+				"clangd"
 			},
 		},
 	},
 	-- Formatter installed
-	{
+	{ 
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
 				"stylua",
-				"clang-format",
+				"clang-format"
 			},
 		},
 	},

@@ -1,7 +1,7 @@
 return {
 	"stevearc/aerial.nvim",
 	opts = {
-		layout = { default_direction = "right" },
+		layout = { default_direction = "right", width = nil },
 		show_guides = true,
 		filter_kind = { "Function", "Method", "Class", "Constructor" },
 		backends = { "lsp", "treesitter" },

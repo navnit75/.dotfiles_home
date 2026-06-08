@@ -3,22 +3,16 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-
+	cmd = "Telescope",
+	keys = {
+		{ "<leader><leader>", function() require("fff").find_files() end },
+		{ "<leader>fg", function() require("fff").live_grep() end },
+		{ "<leader>pws", function() require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") }) end },
+		{ "<leader>pWs", function() require("telescope.builtin").grep_string({ search = vim.fn.expand("<cWORD>") }) end },
+		{ "<leader>vh", function() require("telescope.builtin").help_tags() end },
+		{ "<C-p>", function() require("telescope.builtin").git_files() end },
+	},
 	config = function()
-		local keymap = function(keys, func)
-			vim.keymap.set("n", keys, func, {})
-		end
-
 		require("telescope").setup({})
-		local builtin = require("telescope.builtin")
-
-		-- keymap("<leader><leader>", builtin.find_files)
-		-- keymap("<leader>fg", builtin.live_grep)
-		keymap("<leader><leader>", function()
-			require("fff").find_files()
-		end)
-		keymap("<leader>fg", function()
-			require("fff").live_grep()
-		end)
 	end,
 }

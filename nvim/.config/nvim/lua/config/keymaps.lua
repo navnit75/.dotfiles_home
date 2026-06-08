@@ -8,22 +8,27 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Changing the position of the use ^ and $ 
 vim.keymap.set({ "n", "x", "o" }, "gl", "$", { desc = "End of line" })
 vim.keymap.set({ "n", "x", "o" }, "gh", "^", { desc = "Start of line" })
+vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-q>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
+-- Searching word under cursor shortcut
 vim.keymap.set("n", "sn", "*N", { desc = "Search word under cursor forward" })
 vim.keymap.set("n", "sp", "#N", { desc = "Search word under cursor backward" })
+
 vim.keymap.set({ "n", "x" }, "<leader>ca", function()
 	require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })

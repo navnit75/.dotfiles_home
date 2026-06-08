@@ -34,20 +34,13 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+-- 250ms balances hover responsiveness with smooth scrolling (50ms causes jank from constant CursorHold events)
+vim.opt.updatetime = 250
 vim.opt.list = false
 
-vim.opt.conceallevel = 0
--- vim.opt.colorcolumn = "120"
+vim.opt.conceallevel = 2
+vim.opt.colorcolumn = ""
 
--- Treesitter-based folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
-vim.opt.foldenable = true
 
--- Yellow cursor in insert mode
-vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
-vim.api.nvim_set_hl(0, "Cursor", { fg = "#000000", bg = "#FFFF00" })
 
 vim.o.autoread = true

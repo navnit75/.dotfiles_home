@@ -1,5 +1,8 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
+    // Free Ctrl h from the default Move-mode binding so it passes through
+    // to the shell / nvim (smart-splits). Move mode is reached via Ctrl Alt h.
+    unbind "Ctrl h"
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
@@ -40,7 +43,7 @@ keybinds {
         bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
     }
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "Ctrl Alt h" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -250,7 +253,7 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        bind "Ctrl Alt h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
@@ -370,6 +373,7 @@ load_plugins {
 // Default: default
 //
 // theme "default"
+theme "everforest-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"

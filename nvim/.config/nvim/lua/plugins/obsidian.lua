@@ -1,4 +1,4 @@
-local vault = vim.fn.expand("~/Documents/Obsidian_Vault/Work")
+local vault = vim.fn.expand("/Users/navnitkumar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian_Docs")
 
 return {
 	"obsidian-nvim/obsidian.nvim",
@@ -26,7 +26,7 @@ return {
 	},
 	opts = {
 		workspaces = {
-			{ name = "Work", path = vault },
+			{ name = "Obsidian_Docs", path = vault },
 		},
 		completion = {
 			nvim_cmp = false,

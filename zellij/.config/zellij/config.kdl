@@ -321,27 +321,32 @@ load_plugins {
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
+// Example commented theme from upstream
 // themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
+//     dracula {...}
 // }
+
+themes {
+    moonfly {
+        fg "#c6c6c6"
+        bg "#080808"
+        black "#080808"
+        red "#ff5d5d"
+        green "#8cc85f"
+        yellow "#e3c78a"
+        blue "#80a0ff"
+        magenta "#ae81ff"
+        orange "#de935f"
+        cyan "#79dac8"
+        white "#c6c6c6"
+    }
+}
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
 // theme "default"
-theme "everforest-dark"
+theme "moonfly"
 
 // The name of the default layout to load on startup
 // Default: "default"

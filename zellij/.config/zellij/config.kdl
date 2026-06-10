@@ -3,6 +3,8 @@ keybinds clear-defaults=true{
     // Free Ctrl h from the default Move-mode binding so it passes through
     // to the shell / nvim (smart-splits). Move mode is reached via Ctrl Alt h.
     unbind "Ctrl h"
+    unbind "Ctrl n"
+    unbind "Ctrl p"
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
@@ -204,12 +206,6 @@ keybinds clear-defaults=true{
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
-    }
-    shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
-    }
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
